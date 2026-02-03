@@ -1,7 +1,5 @@
 function BalanceSection({
-  setShowExpenseForm,
-  setShowBalanceForm,
-  totalIncome,
+  setActiveForm,
   totalExpense,
   remainingBalance,
 }) {
@@ -16,7 +14,7 @@ function BalanceSection({
         </div>
         <button
           className="bg-black text-white w-[150px] md:w-[200px] px-3 py-2 text-lg md:text-2xl rounded-lg cursor-pointer"
-          onClick={() => setShowBalanceForm(true)}
+          onClick={() => setActiveForm("balance")}
         >
           Add Balance
         </button>
@@ -29,7 +27,7 @@ function BalanceSection({
         </div>
         <button
           className="bg-black text-white w-[150px] md:w-[200px] px-3 py-2 text-lg md:text-2xl rounded-lg cursor-pointer"
-          onClick={() => setShowExpenseForm(true)}
+          onClick={() => setActiveForm("expense")}
         >
           Add Expenses
         </button>

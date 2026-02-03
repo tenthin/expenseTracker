@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 function DashboardLayout() {
   return (
-    <div className="flex gap-5 bg-blue-300 ">
+    <div className="flex bg-blue-300 ">
       {/* LEFT SIDE */}
       <div className="min-h-screen ">
         <Navbar />

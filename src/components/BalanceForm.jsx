@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BalanceForm({ setTransactions, setShowBalanceForm }) {
+function BalanceForm({ setTransactions, closeForm }) {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
@@ -21,7 +21,7 @@ function BalanceForm({ setTransactions, setShowBalanceForm }) {
     };
 
     setTransactions((prev) => [...prev, newIncome]);
-    setShowBalanceForm(false);
+    closeForm();
     setAmount("");
     setDate("");
   };
@@ -48,7 +48,7 @@ function BalanceForm({ setTransactions, setShowBalanceForm }) {
         <div className="flex gap-3 mt-5 justify-center">
           <button
             type="button"
-            onClick={() => setShowBalanceForm(false)}
+            onClick={() => closeForm()}
             className="bg-black text-white px-4 py-2 rounded-lg"
           >
             Cancel

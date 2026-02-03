@@ -7,9 +7,8 @@ import ExpenseForm from "../components/ExpenseForm";
 import BalanceForm from "../components/BalanceForm";
 
 function Home() {
-  const [showExpenseForm, setShowExpenseForm] = useState(false);
+  const [activeForm, setActiveForm] = useState(null);
   const [transactions, setTransactions] = useState([]);
-  const [showBalanceForm, setShowBalanceForm] = useState(false);
   const [searchText, setSearchText] = useState("");
 
   const filteredTransactions = transactions.filter((t) =>
@@ -29,24 +28,23 @@ function Home() {
 
   return (
     <div className="">
-      <div className=" w-[320px] md:w-[600px] lg:w-full p-6">
+      <div className=" w-[380px] md:w-[600px] lg:w-full p-6">
         <BalanceSection
-          setShowExpenseForm={setShowExpenseForm}
-          setShowBalanceForm={setShowBalanceForm}
+          setActiveForm={setActiveForm}
           totalIncome={totalIncome}
           totalExpense={totalExpense}
           remainingBalance={remainingBalance}
         />
-        {showExpenseForm && (
+        {activeForm === "expense" && (
           <ExpenseForm
             setTransactions={setTransactions}
-            setShowExpenseForm={setShowExpenseForm}
+            closeForm={() => setActiveForm(null)}
           />
         )}
-        {showBalanceForm && (
+        {activeForm === "balance" && (
           <BalanceForm
             setTransactions={setTransactions}
-            setShowBalanceForm={setShowBalanceForm}
+            closeForm={() => setActiveForm(null)}
           />
         )}
         <SearchBar searchText={searchText} setSearchText={setSearchText} />

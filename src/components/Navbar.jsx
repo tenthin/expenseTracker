@@ -12,8 +12,8 @@ function Navbar() {
 
   return (
     <>
-      <div className="md:hidden flex items-center justify-between p-4">
-        <button onClick={() => setOpen(true)} className="text-white text-2xl">
+      <div className="md:hidden flex items-center justify-between p-3">
+        <button onClick={() => setOpen(true)} className="text-black text-4xl">
           ☰
         </button>
       </div>

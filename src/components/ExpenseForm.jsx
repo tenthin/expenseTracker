@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ExpenseForm({ setTransactions, setShowExpenseForm }) {
+function ExpenseForm({ setTransactions, closeForm }) {
   const [activity, setActivity] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -22,7 +22,7 @@ if(!activity.trim() || !amount.trim() || !date.trim()) {
     };
 
     setTransactions((prev) => [...prev, newExpense]);
-    setShowExpenseForm(false); //close the form
+    closeForm(); //close the form
 
     setActivity("");
     setAmount("");
@@ -59,7 +59,7 @@ if(!activity.trim() || !amount.trim() || !date.trim()) {
           <div className="flex gap-3 mt-5 justify-center">
             <button
               type="button"
-              onClick={() => setShowExpenseForm(false)}
+              onClick={() => closeForm()}
               className="bg-black text-white w-[80px] py-2 rounded-lg cursor-pointer"
             >
               Cancel
