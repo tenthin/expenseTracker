@@ -54,23 +54,8 @@ function Navbar() {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/trips" className={navLinkClass}>
-                  Trips
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/approvals" className={navLinkClass}>
-                  Approvals
-                </NavLink>
-              </li>
-              <li>
                 <NavLink to="/settings" className={navLinkClass}>
                   Settings
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/support" className={navLinkClass}>
-                  Support
                 </NavLink>
               </li>
             </ul>

@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <div className="">
-      <div className="w-[260px] sm:w-[600px] lg:w-full p-6">
+      <div className=" w-[320px] md:w-[600px] lg:w-full p-6">
         <BalanceSection
           setShowExpenseForm={setShowExpenseForm}
           setShowBalanceForm={setShowBalanceForm}

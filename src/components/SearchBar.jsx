@@ -1,6 +1,6 @@
 function SearchBar({searchText, setSearchText}) {
   return (
-    <form className="mt-9 w-[450px] m-auto mb-5">
+    <form className="mt-9 lg:w-[450px] m-auto mb-5">
       <input
         type="text"
         placeholder="Search Activity"
