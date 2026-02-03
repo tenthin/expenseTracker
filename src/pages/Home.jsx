@@ -6,9 +6,8 @@ import TransactionTable from "../components/TransactionTable";
 import ExpenseForm from "../components/ExpenseForm";
 import BalanceForm from "../components/BalanceForm";
 
-function Home() {
+function Home({ transactions, addTransaction }) {
   const [activeForm, setActiveForm] = useState(null);
-  const [transactions, setTransactions] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   const filteredTransactions = transactions.filter((t) =>
@@ -37,13 +36,13 @@ function Home() {
         />
         {activeForm === "expense" && (
           <ExpenseForm
-            setTransactions={setTransactions}
+            addTransaction={addTransaction}
             closeForm={() => setActiveForm(null)}
           />
         )}
         {activeForm === "balance" && (
           <BalanceForm
-            setTransactions={setTransactions}
+            addTransaction={addTransaction}
             closeForm={() => setActiveForm(null)}
           />
         )}

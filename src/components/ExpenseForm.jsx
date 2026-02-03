@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ExpenseForm({ setTransactions, closeForm }) {
+function ExpenseForm({ addTransaction, closeForm }) {
   const [activity, setActivity] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -21,7 +21,7 @@ if(!activity.trim() || !amount.trim() || !date.trim()) {
       date,
     };
 
-    setTransactions((prev) => [...prev, newExpense]);
+    addTransaction(newExpense);
     closeForm(); //close the form
 
     setActivity("");

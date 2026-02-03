@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BalanceForm({ setTransactions, closeForm }) {
+function BalanceForm({ addTransaction, closeForm }) {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
@@ -20,7 +20,7 @@ function BalanceForm({ setTransactions, closeForm }) {
       date,
     };
 
-    setTransactions((prev) => [...prev, newIncome]);
+    addTransaction(newIncome);
     closeForm();
     setAmount("");
     setDate("");

@@ -1,6 +1,7 @@
 import TransactionTable from "../components/TransactionTable";
 
 function Expense({ transactions }) {
+
   return (
     <div className="p-4">
       <div className="flex justify-between items-center mb-4">
@@ -17,6 +18,7 @@ function Expense({ transactions }) {
         filterType="expense"
       />
     </div>
+    
   );
 }
 
