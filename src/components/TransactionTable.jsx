@@ -4,32 +4,50 @@ function TransactionTable({ transactions, filterType }) {
     : transactions;
 
   return (
-    <div className="lg:w-[450px] m-auto">
-      <h1 className="font-bold text-xl mb-3">{filterType ? "Expenses" : "Transactions"}</h1>
+    <div className="mt-4 overflow-x-auto">
+      <h1 className="font-bold text-xl mb-3">
+        {filterType ? "Expenses" : "Transactions"}
+      </h1>
 
-      <table className="table-fixed border w-full">
+      <table className="w-full border-collapse">
         <thead>
           <tr>
-            <th className="md:w-1/2 border p-2">Activity</th>
-            <th className="md:w-1/4 border p-2">Amount</th>
-            <th className="md:w-1/4 border p-2">Date</th>
+            <th className="text-left text-sm text-gray-500 border-b p-3">
+              Activity
+            </th>
+            <th className="text-right text-sm text-gray-500 border-b p-3">
+              Amount
+            </th>
+            <th className="text-right text-sm text-gray-500 border-b p-3">
+              Date
+            </th>
           </tr>
         </thead>
 
         <tbody>
+          {filteredTransactions.length === 0 && (
+            <tr>
+              <td colSpan="3" className="p-6 text-center text-gray-400">
+                No expenses yet. Add your first one.
+              </td>
+            </tr>
+          )}
+
           {filteredTransactions.map((item) => (
             <tr key={item.id}>
-              <td className="border p-2">{item.activity}</td>
+              <td className="p-3">{item.activity}</td>
 
               <td
-                className={`border p-2 ${
-                  item.type === "income" ? "text-green-700" : "text-red-700"
+                className={`p-3 text-right font-medium ${
+                  item.type === "income" ? "text-green-600" : "text-red-600"
                 }`}
               >
                 ${item.amount}
               </td>
 
-              <td className="border p-2">{item.date}</td>
+              <td className="p-3 text-right text-sm text-gray-500">
+                {item.date}
+              </td>
             </tr>
           ))}
         </tbody>
