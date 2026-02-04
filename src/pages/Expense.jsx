@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TransactionTable from "../components/TransactionTable";
 
 function Expense({ transactions }) {
@@ -12,9 +13,9 @@ function Expense({ transactions }) {
             </p>
           </div>
 
-          <button className="bg-red-600 hover:bg-red-700 transition text-white px-4 py-2 rounded-lg">
+          <Link to="/add-expense" className="bg-red-600 hover:bg-red-700 transition text-white px-4 py-2 rounded-lg">
             + New Expense
-          </button>
+          </Link>
         </div>
 
         {/* Reuse TransactionTable */}

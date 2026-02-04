@@ -14,11 +14,20 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<DashboardLayout />}>
-          <Route path="/" element={<Home transactions={transactions} addTransaction={addTransaction}/>} />
+          <Route
+            path="/"
+            element={
+              <Home
+                transactions={transactions}
+                addTransaction={addTransaction}
+              />
+            }
+          />
           <Route
             path="/expenses"
             element={<Expense transactions={transactions} />}
           />
+          <Route path="/add-expense" element={<Home transactions={transactions} addTransaction={addTransaction}/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
